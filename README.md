@@ -124,6 +124,6 @@ Project Link: [https://github.com/MaharshSuryawala/Food-Image-Recognition](https
 <!-- MARKDOWN LINKS -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/MaharshSuryawala/Food-Image-Recognition?style=flat-square 
-[contributors-url]: https://github.com/MaharshSuryawala/Heart-Disease-Risk-Prediction/graphs/contributors
+[contributors-url]: https://github.com/MaharshSuryawala/Food-Image-Recognition/graphs/contributors
 [license-shield]: https://img.shields.io/github/license/MaharshSuryawala/Food-Image-Recognition?style=flat-square?style=flat-square
 [license-url]: https://github.com/MaharshSuryawala/Food-Image-Recognition?style=flat-square/blob/master/LICENSE.txt
