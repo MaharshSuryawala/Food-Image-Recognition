@@ -10,16 +10,24 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
-  * [Overview](#overview)
-  * [Built With](#built-with)
-  * [Dataset](#dataset)
-* [Results](#results)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [References](#references) 
-* [Acknowledgements](#acknowledgements)
+- [Food-Image-Recognition](#food-image-recognition)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+    - [Overview](#overview)
+    - [Built With](#built-with)
+    - [Dataset](#dataset)
+  - [Results](#results)
+    - [Demo](#demo)
+    - [Accuracy vs. Epochs](#accuracy-vs-epochs)
+    - [Loss vs. Epochs](#loss-vs-epochs)
+    - [Testing on random images.](#testing-on-random-images)
+    - [Visualization of different layers.](#visualization-of-different-layers)
+    - [Heat-Map & Class-Activation-Map](#heat-map--class-activation-map)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
+  - [References](#references)
+  - [Acknowledgements](#acknowledgements)
 
 ## About the Project
 
@@ -55,6 +63,10 @@ Source: [The Food-101 Data Set](https://data.vision.ee.ethz.ch/cvl/datasets_extr
   * All the images were rescaled to have a maximum side length of 512 pixels. 
 
 ## Results
+
+### Demo
+
+![demo](.images/demo/food_image_recognition.gif)
 
 ### Accuracy vs. Epochs
 

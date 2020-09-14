@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Image Recognition & Nutrition Visualization</title>
+    <!-- <style type="text/css">.div-inline{ display:inline }</style> -->
+    <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <style>
+        .container {
+            margin: 30px auto;
+            width: 1500px;
+            height: 100px;
+        }
+
+        polyline {
+            fill: none;
+            stroke: #000000;
+            stroke-width: 2px;
+            stroke-dasharray: 5px;
+        }
+
+        fieldset {
+            border: 2px solid black;
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1.home_head {
+            text-align: center;
+            color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        /*body {
+              background-color: #FDEDEC;
+          }*/
+    </style>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom: 0">
+    <h1>Results</h1>
+    <!-- <p>We help you know what you eat and recommend what you should eat.</p>  -->
+</div>
+
+<ul>
+    <!-- <li><a class="active" href="/">Home</a></li> -->`
+    <li>
+        <a calss="active" href="/recognize"
+        >Click here to go back and upload more images.</a
+        >
+    </li>
+    <!-- <li><a href="#contact">联系</a></li>
+    <li><a href="#about">关于</a></li> -->
+</ul>
+
+{% for p in pack %}
+    <br/>
+    <fieldset>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="{{ p.image }}" width="400" height="400" />
+                </div>
+                <div class="col-sm-4">
+                    <table>
+                        <thead>
+                        <th>Name</th>
+                        <th>Probability(%)</th>
+                        </thead>
+                        <tbody>
+                        {% for key,value in p.result.items() %}
+                            <tr>
+                                <td>{{ key }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{{ p.food }}" target="_blank"
+                    >Click here for more nutrition information.
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <form action="/update" method="POST">
+              <span>Enter quantity for food(g):</span
+              ><input type="number" name="q" value="{{ p.quantity }}"/>
+                        <input type="submit" name="s" value="Submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+{% endfor %}
+<br/>
+<br/>
+<h2 align="center">Nutrition Report</h2>
+        <div id="piechart" style="height: 500px; margin:auto;">
+            <script type="text/javascript">
+                // Load google charts
+                google.charts.load('current', {'packages': ['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Draw the chart and set the chart values
+                function drawChart() {
+                    let dataset = [];
+                    dataset.push(['name', 'value']);
+                    let wholefood = {{ whole_nutrition|safe }};
+                    wholefood.forEach(element => dataset.push([element.name, element.value]));
+                    console.log(dataset)
+                    let data = google.visualization.arrayToDataTable(dataset);
+
+                    // Optional; add a title and set the width and height of the chart
+                    let options = {is3D: false};
+
+                    // Display the chart inside the <div> element with id="piechart"
+                    let chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                    chart.draw(data, options);
+                }
+            </script>
+        </div>
+</body>
+</html>
