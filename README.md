@@ -56,11 +56,16 @@
 
 ### Dataset
 
-Source: [The Food-101 Data Set](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)
+
+Food Images Source: [The Food-101 Data Set](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/)
   
   * The data set consists of 101 food categories, with 1,01, 000 images.
   * 250 test images/per class and 750 training images/per class are provided.
   * All the images were rescaled to have a maximum side length of 512 pixels. 
+
+Nutrition Information Source: [Food Data Central API](https://fdc.nal.usda.gov/api-guide.html#bkmk-3)
+
+  * U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, 2019. fdc.nal.usda.gov. 
 
 ## Results
 
