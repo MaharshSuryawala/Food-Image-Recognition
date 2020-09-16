@@ -18,8 +18,8 @@
     - [Dataset](#dataset)
   - [Results](#results)
     - [Demo](#demo)
-    - [Accuracy vs. Epochs](#accuracy-vs-epochs)
-    - [Loss vs. Epochs](#loss-vs-epochs)
+    - [Accuracy](#accuracy)
+    - [Loss](#loss)
     - [Testing on random images.](#testing-on-random-images)
     - [Visualization of different layers.](#visualization-of-different-layers)
     - [Heat-Map & Class-Activation-Map](#heat-map--class-activation-map)
@@ -73,11 +73,11 @@ Nutrition Information Source: [Food Data Central API](https://fdc.nal.usda.gov/a
 
 ![demo](.images/demo/food_image_recognition.gif)
 
-### Accuracy vs. Epochs
+### Accuracy
 
 ![Accuracy](.images/accuracy.png)
 
-### Loss vs. Epochs
+### Loss
 
 ![Loss](.images/loss.png)
 
