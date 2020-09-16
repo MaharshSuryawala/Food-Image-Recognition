@@ -75,11 +75,11 @@ Nutrition Information Source: [Food Data Central API](https://fdc.nal.usda.gov/a
 
 ### Accuracy vs. Epochs
 
-![Accuracy vs. Epochs](.images/accuracy.png)
+![Accuracy](.images/accuracy.png)
 
 ### Loss vs. Epochs
 
-![Loss vs. Epochs](.images/loss.png)
+![Loss](.images/loss.png)
 
 ### Testing on random images.
 
